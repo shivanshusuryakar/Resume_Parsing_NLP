@@ -1,0 +1,46 @@
+Skills Required
+
+
+    • Hands on years of working experience with ETL integration, Core JAVA, Spring Boot and APIs
+
+    • Good knowledge of DB2 or Azure SQL server (experience developing SQL queries)
+
+    • Understanding of File Transfer protocols and processes ie. FTP, SFTP, PGP Encryption
+
+    • Understanding mainframe integration for ETL processing
+
+    • Technical working experience with UNIX shell scripting
+
+    • Knowledge and understanding of Web Services
+
+    • Experience in developing ETL processes (preferably Talend, iWay, DataStage)
+
+    • Experience in writingcreatingupdating technical documents
+
+    • Experience in batch jobprocess scheduling
+
+    • Familiarity with data integration and data streaming, WebSphere MQ and Communication Networks
+
+    • Familiarity with event driven programming concepts
+
+    • Exposure to Data Modelling and Data Architecture
+
+
+    Roles & Responsibilities
+
+
+    • Act as an expert technical resource for problem analysis and solution implementation
+
+    • Work closely with Delivery and Technical Architecture teams, Product Owners and Technical Platform teams to design and develop high quality solutions supporting enterprise architecture and business process improvements that support our business and technical strategies
+
+    • Deal effectively with external Vendors, Business Partners, internal Stakeholders and Management
+
+    • Implement new systems or enhancements including, reviewing programs written by team members, establishing and supporting system test procedures, developing implementation plan, developing the required program and system documentation and ensuring all functionality has been delivered as required
+
+    • Provide post implementation support and training to the Production Support staff on the production processing functionality
+
+    • Support other development areas providing technical expertise, guidance, advice and knowledge transfer to staff and more junior Developers
+
+    • Coordinate and accommodate with a geographically dispersed team
+
+    • Pager rotation mandatory during critical processing times

@@ -1,0 +1,406 @@
+<html>
+<head>
+  <title>NLP Project</title>
+  <style>
+body {
+  overflow-y:hidden;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #000000;
+  background-image: radial-gradient(#11581E, #041607);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Inconsolata", Helvetica, sans-serif;
+  font-size: 1.5rem;
+  color: rgba(128, 255, 128, 0.8);
+  text-shadow: 0 0 1ex #33ff33, 0 0 2px rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+}
+
+.noise {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.02;
+  overflow:hidden;
+}
+
+.file-upload {
+  /* background-color: #ffffff; */
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.file-upload1 {
+  /* background-color: #ffffff; */
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  color:#c9d8d1;
+  text-shadow: 0 0 1ex #090e09, 0 0 2px rgba(255, 255, 255, 0.5);
+  background: #1FB264;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #15824B;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.file-upload-btn:hover {
+  background: #1AA059;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+.file-upload-input1 {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+.image-upload-wrap {
+  margin-top: 20px;
+  border: 4px dashed #1FB264;
+  position: relative;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #1FB264;
+  border: 4px dashed #ffffff;
+}
+
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #c9d8d1;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #8f1d11;
+  color:rgba(171, 190, 171, 0.8);
+  text-shadow: 0 0 1ex #631724, 0 0 2px rgba(172, 141, 141, 0.5);
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  box-shadow: #b67e7e 2px 2px 7px;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload1 {
+  /* background-color: #ffffff; */
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.file-upload-btn1 {
+  width: 100%;
+  margin: 0;
+  color:#c9d8d1;
+  text-shadow: 0 0 1ex #090e09, 0 0 2px rgba(255, 255, 255, 0.5);
+  background: #1FB264;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #15824B;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.file-upload-btn1:hover {
+  background: #1AA059;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload-btn1:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content1 {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input1 {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap1 {
+  margin-top: 20px;
+  border: 4px dashed #1FB264;
+  position: relative;
+}
+
+.image-dropping1,
+.image-upload-wrap1:hover {
+  background-color: #1FB264;
+  border: 4px dashed #ffffff;
+}
+
+.image-title-wrap1 {
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
+
+.drag-text1 {
+  text-align: center;
+}
+
+.drag-text1 h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #15824B;
+  padding: 60px 0;
+}
+
+.file-upload-image1 {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image1 {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #8f1d11;
+  color:rgba(171, 190, 171, 0.8);
+  text-shadow: 0 0 1ex #631724, 0 0 2px rgba(172, 141, 141, 0.5);
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  box-shadow: #b67e7e 2px 2px 7px;
+}
+.submit {
+  width: 200px;
+  margin: 0;
+  color: #c9d8d1;
+  background: #8f1d11;
+  color:rgba(171, 190, 171, 0.8);
+  text-shadow: 0 0 1ex #631724, 0 0 2px rgba(172, 141, 141, 0.5);
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  box-shadow: #b67e7e 2px 2px 7px;
+}
+.submit:hover{
+  cursor:pointer;
+  background: #c13b2a;
+  color: #ffffff;
+}
+
+.remove-image1:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+  </style>
+  <script>
+    function readURL(input) {
+  if (input.files && input.files[0]) {
+
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('.image-upload-wrap').hide();
+
+      $('.file-upload-image').attr('src', "{{ url_for('static',filename='jd.jpg') }}");
+      $('.file-upload-content').show();
+
+      $('.image-title').html(input.files[0].name);
+    };
+
+    reader.readAsDataURL(input.files[0]);
+
+  } else {
+    removeUpload();
+  }
+}
+function readURL1(input) {
+  if (input.files && input.files[0]) {
+
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('.image-upload-wrap1').hide();
+
+      $('.file-upload-image1').attr('src', "{{ url_for('static',filename='resume.png') }}");
+      $('.file-upload-content1').show();
+
+      $('.image-title1').html(input.files[0].name);
+    };
+
+    reader.readAsDataURL(input.files[0]);
+
+  } else {
+    removeUpload();
+  }
+}
+
+function removeUpload() {
+  $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+  $('.file-upload-content').hide();
+  $('.image-upload-wrap').show();
+}
+$('.image-upload-wrap').bind('dragover', function () {
+		$('.image-upload-wrap').addClass('image-dropping');
+	});
+	$('.image-upload-wrap').bind('dragleave', function () {
+		$('.image-upload-wrap').removeClass('image-dropping');
+});
+
+function removeUpload1() {
+  $('.file-upload-input1').replaceWith($('.file-upload-input1').clone());
+  $('.file-upload-content1').hide();
+  $('.image-upload-wrap1').show();
+}
+$('.image-upload-wrap1').bind('dragover', function () {
+		$('.image-upload-wrap1').addClass('image-dropping1');
+	});
+	$('.image-upload-wrap1').bind('dragleave', function () {
+		$('.image-upload-wrap1').removeClass('image-dropping1');
+});
+
+  </script>
+</head>
+<body>
+  <div class="noise"></div>
+<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<form action="result" method="POST">
+
+<div class="file-upload">
+  <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Upload Job Description</button>
+
+  <div class="image-upload-wrap">
+    <input required class="file-upload-input" type='file' onchange="readURL(this)" accept=".txt" name="jd" />
+    <div class="drag-text">
+      <h3>Drag and drop the JD</h3>
+    </div>
+  </div>
+  <div class="file-upload-content">
+    <img class="file-upload-image"  src="{{ url_for('static',filename='jd.jpg') }}" alt="your image" />
+    <div class="image-title-wrap">
+      <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+    </div>
+  </div>
+</div>
+
+<div class="file-upload1">
+  <button class="file-upload-btn1" type="button" onclick="$('.file-upload-input1').trigger( 'click' )">Upload Resume</button>
+
+  <div class="image-upload-wrap1">
+    <input required class="file-upload-input1" type='file' onchange="readURL1(this)" accept=".docx" name="resume" />
+    <div class="drag-text">
+      <h3>Drag and drop your resume</h3>
+    </div>
+  </div>
+  <div class="file-upload-content1">
+    <img class="file-upload-image1" src="{{ url_for('static',filename='resume.png') }}" alt="your image" />
+    <div class="image-title-wrap1">
+      <button type="button" onclick="removeUpload1()" class="remove-image1">Remove <span class="image-title1">Uploaded Image</span></button>
+    </div>
+  </div>
+</div>
+<center>
+  <div class="container" style="margin-top:30px">
+    <button type="submit"  class="submit">Submit</button>
+  </div>
+</center>
+
+</form>
+</body>
+</html>

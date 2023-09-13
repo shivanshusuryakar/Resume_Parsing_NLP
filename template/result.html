@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Result</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Luckiest+Guy");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #000000;
+  background:radial-gradient(#11581E, #041607);
+  background-repeat: round;
+  font-family: "Inconsolata", Helvetica, sans-serif;
+  font-size: 1.5rem;
+  color: rgba(57, 110, 57, 0.8);
+  text-shadow: 0 0 1ex #0e4e0e, 0 0 2px rgba(15, 63, 26, 0.8);
+}
+
+#preload {
+  display:none;
+}
+
+.running_man {
+  width: 570px;
+  height: 270px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.running_man .man {
+  z-index: 10;
+  top: -130px;
+  left: -600px;
+  position: absolute;
+  width: 640px;
+  height: 480px;
+  background-size: cover;
+}
+
+.running_man .textarea span {
+  font-size: 24px;
+  display: block;
+  color: #0b0c0c;
+  text-shadow:burlywood 2px 2px 5px;
+  opacity: 0;
+  font-family: "Luckiest Guy", cursive;
+}
+.running_man .textarea span:nth-child(1) {
+  margin-left: 7px;
+  transform: translateX(-100px);
+  transition: all 400ms 400ms;
+}
+.running_man .textarea span:nth-child(2) {
+  z-index: 12;
+  font-size: 160px;
+  /* color: #1d1f20; */
+  transform: translateX(-100px);
+  transition: all 400ms 600ms;
+  position: relative;
+}
+.running_man .textarea span:nth-child(3) {
+  z-index: 9;
+  position: absolute;
+  display: block;
+  font-size: 60px;
+  margin: -135px 0 0 300px;
+  transform: translateX(-100px);
+  transition: all 400ms 700ms;
+}
+.running_man .textarea span:nth-child(4) {
+  color: #881426;
+  margin-top: -5px;
+  font-size: 130px;
+  transform: translateX(-100px);
+  transition: all 400ms 800ms;
+}
+.running_man.active .textarea span {
+  transform: translateX(0px);
+  opacity: 0.8;
+}
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #1a1919;
+  color:rgba(171, 190, 171, 0.8);
+  text-shadow: 0 0 1ex #0b282b, 0 0 2px rgba(172, 141, 141, 0.5);
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #1c4636;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  box-shadow: #07381b 2px 2px 15px;
+}
+.remove-image:hover {
+  background: #292525;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+  </style>
+<script>
+  (function(){
+  //main Animation
+  function runmanLoad () {
+    var num = 1;
+    var speed = 100;
+    var maxImgCount = 8;
+    var $content = $('.running_man');
+    var $man = $('.man');
+    
+  //do the man running after addclass
+  $.when(
+      $content.addClass('active')
+  ).done(function(){
+      $man.animate({left: 0}, 1200);
+    
+      setInterval(function(){
+        num = num + 1;
+        //back to the first img
+        if (num > 0 && num === maxImgCount) {
+          num = 1;
+        }
+        
+        //change the img url per 0.08sec
+        var newLInk = 'http://www.vicchoutw.com/codepen/images/javascript/running/runman' + num + '.png';
+        $man.css({'background-image': 'url(' + newLInk + ')'});
+      }, speed);
+      
+    });
+  }
+  
+  //window preload images
+  function addLoadEvent(runmanLoad) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') { 
+        window.onload = runmanLoad;
+    } else { 
+        window.onload = function() {
+          if (oldonload) {
+              oldonload();
+          }
+      runmanLoad();
+        };
+    }
+  }
+
+addLoadEvent(runmanLoad);
+
+})();
+
+</script>
+
+</head>
+<body style="overflow-x: hidden;">
+  <div class="running_man">
+    <div class="textarea">
+      <span>Go<br>get the job !!!<br><br> it matches<br> for profile of:</span>
+      <span>&nbsp</span>
+      <span>{{ profile }}</span>
+      <span>{{ score }} %</span>
+    </div>
+    <figure class="man"></figure>
+  </div>
+  
+  
+  <!-- for preloading images -->
+  <div id="preload">
+     <img src="http://www.vicchoutw.com/codepen/images/javascript/running/runman1.png"/>
+     <img src="http://www.vicchoutw.com/codepen/images/javascript/running/runman2.png"/>
+     <img src="http://www.vicchoutw.com/codepen/images/javascript/running/runman3.png"/>
+     <img src="http://www.vicchoutw.com/codepen/images/javascript/running/runman4.png"/>
+     <img src="http://www.vicchoutw.com/codepen/images/javascript/running/runman5.png"/>
+     <img src="http://www.vicchoutw.com/codepen/images/javascript/running/runman6.png"/>
+     <img src="http://www.vicchoutw.com/codepen/images/javascript/running/runman7.png"/>
+     <img src="http://www.vicchoutw.com/codepen/images/javascript/running/runman8.png"/>
+  </div>
+  <!-- end preloading images -->
+  <center>
+    <form action="/stats" method="POST">
+      <input type="text" name="resume" value={{ resume }} style="display:none">
+      <button type="submit" class="remove-image" style="margin-top:2%">
+        Get statistics
+      </button>
+    </form>
+    
+  </center>
+  
+</body>
+</html>

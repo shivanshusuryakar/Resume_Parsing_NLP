@@ -1,0 +1,7 @@
+Microsoft SQL Server
+Selenium
+Python
+Excel
+PostgreSQL
+
+
